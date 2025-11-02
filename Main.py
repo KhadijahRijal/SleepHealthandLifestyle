@@ -83,6 +83,9 @@ st.markdown("---") # Separator
 # 4. Load the data
 df = load_data()
 
+# Display the full DataFrame
+st.dataframe(df, use_container_width=True)
+
 # 5. Display the data with potential custom styling (optional)
 if not df.empty:
     st.header("Loaded Dataset")
@@ -92,8 +95,7 @@ if not df.empty:
     styled_df = df.head(10).style.set_properties(**{'background-color': '#f0eaff',
                                                     'color': '#191970',
                                                     'border-color': '#4B0082'})
-
-    st.dataframe(styled_df, use_container_width=True)
+    
     
     # Display the full DataFrame
     st.dataframe(df, use_container_width=True)
