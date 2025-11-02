@@ -14,8 +14,8 @@ st.markdown(
         color: #000000; /* Black text color for contrast */
         padding: 10px;
         border-radius: 5px;
-        /* Thick Black Border: 5px wide, solid style, black color */
-        border: 5px solid #000000;
+        /* Thick Black Border: 14px wide, solid style, black color */
+        border: 14px solid #000000;
         text-align: center;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
     }
