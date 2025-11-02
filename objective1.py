@@ -124,9 +124,9 @@ else:
     col1, col2, col3, col4 = st.columns(4)
     col1.metric(label="Total Respondents", value=total_respondents)
     col2.metric(label="Average Age", value=f"{avg_age:.1f}")
-    col3.metric(label="Gender (M/F)", value=f"{male_percent:.1f}% / {female_percent:.1f}%")
-    display_occ = most_common_occupation if len(most_common_occupation) <= 12 else most_common_occupation[:12] + "…"
-    col4.metric(label="Top Job", value=f"{display_occ} ({unique_occupations})")
+    col3.metric(label="Gender ♂️/♀️", value=f"{male_percent:.1f}% / {female_percent:.1f}%")
+    col4.metric(label="Top Job", value=f"{most_common_occupation}")
+
     
     # --- Pandas Styler Definition for Purple/Black Theme ---
     # Define styles for table (header and alternating rows)
