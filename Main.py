@@ -10,8 +10,8 @@ st.markdown(
     <style>
     .title {
         /* Smooth, single background color (Medium Slate Blue) */
-        background: #7b68ee; 
-        color: #ffffff; /* White text color for contrast */
+        background: #E6E6FA; 
+        color: #000000; /* Black text color for contrast */
         padding: 10px;
         border-radius: 5px;
         /* Thick Black Border: 5px wide, solid style, black color */
