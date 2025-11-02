@@ -92,20 +92,20 @@ df = load_data(DATA_URL)
 
 # --- Dashboard Layout ---
 
-st.title("💜 Sleep Health and Lifestyle Dataset Dashboard")
+st.title("Sleep Health and Lifestyle Dataset")
 
 if df.empty:
     st.warning("Could not load the dataset. Please check the URL and internet connection.")
 else:
     # 1. Full Dataset Display
-    st.header("1. Full Sleep Health Dataset")
+    st.header("1. Dataset")
     st.write(f"The dataset contains **{len(df)}** rows and **{len(df.columns)}** columns.")
     
     # Use st.dataframe for a scrollable, interactive table
     st.dataframe(df, use_container_width=True)
 
     # 2. Summary Statistics Display
-    st.header("2. Summary Statistics (Numerical Columns)")
+    st.header("2. Summary Statistics")
     st.write("Descriptive statistics for all numerical columns in the dataset.")
 
     # Calculate the summary DataFrame
