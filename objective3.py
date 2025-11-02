@@ -174,13 +174,6 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-import matplotlib
-matplotlib.use("Agg")  # Ensures compatibility with Streamlit
-
-import matplotlib.pyplot as plt
-import seaborn as sns
-import streamlit as st
-
 # Streamlit section title
 st.subheader("Correlation Matrix of Quality of Sleep and Blood Pressure")
 
@@ -226,13 +219,6 @@ st.markdown(
 )
 
 
-import matplotlib
-matplotlib.use("Agg")  # Ensures compatibility with Streamlit
-
-import matplotlib.pyplot as plt
-import seaborn as sns
-import streamlit as st
-
 # Streamlit section title
 st.subheader("Sleep Duration Distribution by Sleep Disorder")
 
@@ -273,13 +259,6 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-
-import matplotlib
-matplotlib.use("Agg")  # Ensures compatibility with Streamlit
-
-import matplotlib.pyplot as plt
-import seaborn as sns
-import streamlit as st
 
 # Streamlit section title
 st.subheader("Physical Activity Level Distribution by BMI Category")
