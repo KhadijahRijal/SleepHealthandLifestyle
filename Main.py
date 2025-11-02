@@ -4,16 +4,16 @@ st.set_page_config(
     page_title="Objective 1"
 )
 
-# Using HTML for styling
+# Using HTML for styling with dark theme
 st.markdown(
     """
     <style>
     .title {
-        background-color: #f0f0f0; /* Light gray background */
-        color: #333333; /* Dark text color */
+        background-color: #333333; /* Dark background */
+        color: #ffffff; /* White text color */
         padding: 10px; /* Padding around the text */
         border-radius: 5px; /* Rounded corners */
-        border: 2px solid #cccccc; /* Border color */
+        border: 2px solid #555555; /* Lighter border color */
         text-align: center; /* Centered text */
     }
     </style>
