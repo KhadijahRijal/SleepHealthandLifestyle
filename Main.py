@@ -12,13 +12,13 @@ st.set_page_config(
 st.markdown(
     """
     <div style="
-        background-color:#87CEEB;
+        background-color:#008080;
         color: #000000; /* Black text color for contrast */;
         padding:15px 20px;
         border-radius:10px;
         border:1px solid #d1d5db;
     ">
-    **Scientific Visualization** is a multidisciplinary field that focuses on transforming complex
+    <b>Scientific Visualization</b> is a multidisciplinary field that focuses on transforming complex
     scientific data into visual forms that are easier to understand, interpret, and communicate.
     Through the use of computational techniques, visualization helps researchers explore datasets,
     identify hidden patterns, and gain insights that would otherwise remain obscure in numerical form.
