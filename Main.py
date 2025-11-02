@@ -4,11 +4,11 @@ st.set_page_config(
     page_title="Sleep Health and Life"
 )
 
-objective1 = st.Page('objective1.py', title='Demographic', icon=":material/school:")
+objective1 = st.Page('objective1.py', title='Demographic', icon=":material/groups:")
 
-objective2 = st.Page('objective2.py', title='Comparison', icon=":material/home:")
+objective2 = st.Page('objective2.py', title='Comparison', icon=":material/balance:")
 
-objective3 = st.Page('objective3.py', title='Correlation', icon=":material/school:")
+objective3 = st.Page('objective3.py', title='Correlation', icon=":material/data_usage:")
 
 pg = st.navigation(
     {
