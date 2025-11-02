@@ -37,12 +37,6 @@ st.markdown(
 # --- Configuration for Dark Mode / Purple Theme ---
 # Note: Streamlit theming is best done via .streamlit/config.toml, 
 # but we can set up the page layout here and use markdown for color accents.
-st.set_page_config(
-    page_title="Sleep Health & Lifestyle Data Analysis",
-    layout="wide",
-    initial_sidebar_state="expanded",
-)
-
 # Custom CSS for the Purple/Black theme
 # This targets the main title and applies a purple accent.
 st.markdown("""
