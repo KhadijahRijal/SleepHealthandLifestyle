@@ -121,7 +121,7 @@ else:
     most_common_occupation = df["Occupation"].mode()[0]
     unique_occupations = df["Occupation"].nunique()
 
-    col1, col2, col3, col4, col4 = st.columns(5)
+    col1, col2, col3, col4, col5 = st.columns(5)
     col1.metric(label="Total Respondents", value=total_respondents)
     col2.metric(label="Average Age", value=f"{avg_age:.1f}")
     col3.metric(label="Gender (Male)", value=f"{male_percent:.1f}%")
