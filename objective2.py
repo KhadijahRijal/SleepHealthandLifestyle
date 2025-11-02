@@ -172,3 +172,149 @@ st.markdown("""
 *To run this application, save the code as `sleep_data_dashboard.py` and execute:*
 `streamlit run sleep_data_dashboard.py`
 """, unsafe_allow_html=True)
+
+
+# Streamlit section title
+st.subheader("Average Quality of Sleep by Gender")
+
+# Create the bar plot
+fig, ax = plt.subplots(figsize=(8, 6))
+sns.barplot(x='Gender', y='Quality of Sleep', data=df, ax=ax)  # Replace DataFrame with df
+ax.set_title('Average Quality of Sleep by Gender')
+ax.set_xlabel('Gender')
+ax.set_ylabel('Quality of Sleep')
+
+# Display the plot in Streamlit
+st.pyplot(fig)
+
+# Add the main introduction paragraph
+st.markdown(
+    """
+    <div style='text-align: center;'>
+        Figure 2
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+st.markdown(
+    """
+    <div style="
+        background-color:#BDB5D5;
+        color: #000000; /* Black text color for contrast */;
+        padding:15px 20px;
+        border-radius:10px;
+        border:1px solid #d1d5db;
+    ">
+    is a multidisciplinary field that focuses on transforming complex
+    scientific data into visual forms that are easier to understand, interpret, and communicate.
+    Through the use of computational techniques, visualization helps researchers explore datasets,
+    identify hidden patterns, and gain insights that would otherwise remain obscure in numerical form.
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+
+# Streamlit section title
+st.subheader("Distribution of Quality of Sleep by Age Group")
+
+# Create age bins
+age_bins = [20, 30, 40, 50, 60]
+age_labels = ['20-29', '30-39', '40-49', '50-59']
+df['Age_Group'] = pd.cut(df['Age'], bins=age_bins, labels=age_labels, right=False)  # Replace DataFrame with df
+
+# Create a cross-tabulation of Age Group and Quality of Sleep
+quality_by_age = pd.crosstab(df['Age_Group'], df['Quality of Sleep'])
+
+# Create a stacked bar plot
+fig, ax = plt.subplots(figsize=(10, 7))
+quality_by_age.plot(kind='bar', stacked=True, ax=ax, colormap='viridis')
+
+ax.set_title('Distribution of Quality of Sleep by Age Group')
+ax.set_xlabel('Age Group')
+ax.set_ylabel('Count')
+ax.legend(title='Quality of Sleep')
+plt.xticks(rotation=45)
+plt.tight_layout()
+
+# Display the plot in Streamlit
+st.pyplot(fig)
+
+# Add the main introduction paragraph
+st.markdown(
+    """
+    <div style='text-align: center;'>
+        Figure 2
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+st.markdown(
+    """
+    <div style="
+        background-color:#BDB5D5;
+        color: #000000; /* Black text color for contrast */;
+        padding:15px 20px;
+        border-radius:10px;
+        border:1px solid #d1d5db;
+    ">
+    is a multidisciplinary field that focuses on transforming complex
+    scientific data into visual forms that are easier to understand, interpret, and communicate.
+    Through the use of computational techniques, visualization helps researchers explore datasets,
+    identify hidden patterns, and gain insights that would otherwise remain obscure in numerical form.
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+
+# Streamlit section title
+st.subheader("Average Quality of Sleep by Occupation (Line Chart)")
+
+# Calculate the average Quality of Sleep for each Occupation and sort by Occupation
+occupation_quality_mean = (
+    df.groupby('Occupation')['Quality of Sleep']
+    .mean()
+    .reset_index()
+    .sort_values(by='Occupation')
+)  # Replace DataFrame with df
+
+# Create a line chart
+fig, ax = plt.subplots(figsize=(12, 8))
+sns.lineplot(x='Occupation', y='Quality of Sleep', data=occupation_quality_mean, marker='o', ax=ax)
+
+ax.set_title('Average Quality of Sleep by Occupation (Line Chart)')
+ax.set_xlabel('Occupation')
+ax.set_ylabel('Average Quality of Sleep')
+ax.grid(True)
+plt.xticks(rotation=90)
+
+# Display the plot in Streamlit
+st.pyplot(fig)
+
+# Add the main introduction paragraph
+st.markdown(
+    """
+    <div style='text-align: center;'>
+        Figure 2
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+st.markdown(
+    """
+    <div style="
+        background-color:#BDB5D5;
+        color: #000000; /* Black text color for contrast */;
+        padding:15px 20px;
+        border-radius:10px;
+        border:1px solid #d1d5db;
+    ">
+    is a multidisciplinary field that focuses on transforming complex
+    scientific data into visual forms that are easier to understand, interpret, and communicate.
+    Through the use of computational techniques, visualization helps researchers explore datasets,
+    identify hidden patterns, and gain insights that would otherwise remain obscure in numerical form.
+    </div>
+    """,
+    unsafe_allow_html=True
+)
