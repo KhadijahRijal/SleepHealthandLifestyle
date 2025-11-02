@@ -241,10 +241,8 @@ st.markdown(
         border-radius:10px;
         border:1px solid #d1d5db;
     ">
-    is a multidisciplinary field that focuses on transforming complex
-    scientific data into visual forms that are easier to understand, interpret, and communicate.
-    Through the use of computational techniques, visualization helps researchers explore datasets,
-    identify hidden patterns, and gain insights that would otherwise remain obscure in numerical form.
+   The total distribution of age in the dataset is displayed in this graph. 
+   Age (from 30 to 60) is represented by the x-axis, while the frequency of people in each age group is displayed on the y-axis.
     </div>
     """,
     unsafe_allow_html=True
@@ -285,7 +283,7 @@ st.pyplot(fig)
 st.markdown(
     """
     <div style='text-align: center;'>
-        Figure 2
+        Figure 3
     </div>
     """,
     unsafe_allow_html=True
@@ -299,10 +297,8 @@ st.markdown(
         border-radius:10px;
         border:1px solid #d1d5db;
     ">
-    is a multidisciplinary field that focuses on transforming complex
-    scientific data into visual forms that are easier to understand, interpret, and communicate.
-    Through the use of computational techniques, visualization helps researchers explore datasets,
-    identify hidden patterns, and gain insights that would otherwise remain obscure in numerical form.
+    The distribution of occupations within a dataset is displayed in this pie chart.
+    Each slice, which is labelled with its fraction of the total, represents a different occupational type.
     </div>
     """,
     unsafe_allow_html=True
