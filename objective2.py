@@ -111,7 +111,7 @@ if df.empty:
     st.warning("Could not load the dataset. Please check the URL and internet connection.")
 else:
      # --- DYNAMIC METRICS SECTION ---
-    quality_sleep = df["Quality of Sleep"].mean()
+    quality_sleep = df["Quality of Sleep"].value_counts(normalize=True).get("Quality of Sleep", 0) * 100)
     avg_age = df["Age"].mean()
     male_percent = (df["Gender"].value_counts(normalize=True).get("Male", 0) * 100)
     female_percent = (df["Gender"].value_counts(normalize=True).get("Female", 0) * 100)
