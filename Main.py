@@ -12,8 +12,8 @@ st.set_page_config(
 st.markdown(
     """
     <div style="
-        background-color:#FF00FF;
-         color: #000000; /* Black text color for contrast */;
+        background-color:#EE82EE;
+        color: #000000; /* Black text color for contrast */;
         padding:15px 20px;
         border-radius:10px;
         border:1px solid #d1d5db;
