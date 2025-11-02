@@ -113,6 +113,7 @@ st.title("💜 Sleep Health and Lifestyle Dataset")
 if df.empty:
     st.warning("Could not load the dataset. Please check the URL and internet connection.")
 else:
+    
     # --- DYNAMIC METRICS SECTION (UPDATED) ---
     total_respondents = len(df)
     avg_age = df["Age"].mean()
