@@ -111,7 +111,7 @@ if df.empty:
     st.warning("Could not load the dataset. Please check the URL and internet connection.")
 else:
      # --- DYNAMIC METRICS SECTION ---
-    quality_sleep = len(df)
+    quality_sleep = df["Quality of Sleep"].mean()
     avg_age = df["Age"].mean()
     male_percent = (df["Gender"].value_counts(normalize=True).get("Male", 0) * 100)
     female_percent = (df["Gender"].value_counts(normalize=True).get("Female", 0) * 100)
@@ -119,7 +119,7 @@ else:
     unique_occupations = df["Occupation"].nunique()
 
     col1, col2, col3, col4, col5 = st.columns(5)
-    col1.metric(label="Quality of Sleep", value=quality_sleep)
+    col1.metric(label="Quality of Sleep", value=quality_sleep
     col2.metric(label="Average Age", value=f"{avg_age:.1f}")
     col3.metric(label="Gender (Male)", value=f"{male_percent:.1f}%")
     col4.metric(label="Gender (Female)", value=f"{female_percent:.1f}%")
