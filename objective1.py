@@ -48,7 +48,7 @@ st.markdown(
         border-radius:10px;
         border:1px solid #d1d5db;
     ">
-   The Visualization is counting population of Gender,Age and Occupation
+   The Visualization is counting population of Gender, Age and Occupation
     """,
     unsafe_allow_html=True
 )
@@ -201,10 +201,9 @@ st.markdown(
         border-radius:10px;
         border:1px solid #d1d5db;
     ">
-    is a multidisciplinary field that focuses on transforming complex
-    scientific data into visual forms that are easier to understand, interpret, and communicate.
-    Through the use of computational techniques, visualization helps researchers explore datasets,
-    identify hidden patterns, and gain insights that would otherwise remain obscure in numerical form.
+    The age distribution of people by gender is seen in this figure 1. 
+    The y-axis displays the number of people in each age group, while the x-axis shows age, which ranges from 30 to 60 years. 
+    Males are represented by blue bars and a blue density curve, whereas females are represented by orange bars and an orange curve.
     </div>
     """,
     unsafe_allow_html=True
