@@ -5,6 +5,10 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 
+# Force light theme (no gridlines)
+plt.style.use('default')
+sns.set_theme(style="white")  # white background, no gridlines
+
 st.set_page_config(
     page_title="Objective 2"
 )
