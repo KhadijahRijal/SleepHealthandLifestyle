@@ -34,8 +34,8 @@ st.markdown(
 
 
 st.set_page_config(
-    page_title="Objective 1 - Full Dataset View",
-    layout="wide"
+    page_title="Objective 1 - Purple & Black Theme",
+    layout="wide" # Use wide layout for better display
 )
 
 # 1. Define the URL for the CSV data
@@ -50,7 +50,7 @@ def load_data():
         return data
     except Exception as e:
         st.error(f"Error loading data: {e}")
-        return pd.DataFrame()
+        return pd.DataFrame() # Return empty DataFrame on failure
 
 # 3. Apply Purple & Black Styling to the Title Box
 st.markdown(
@@ -64,7 +64,7 @@ st.markdown(
         border-radius: 8px;
         border: 4px solid #000000; /* Thick Black Border */
         text-align: center;
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6); /* Stronger shadow */
     }
     h1 {
         margin: 0;
@@ -78,23 +78,24 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-st.markdown("---")
+st.markdown("---") # Separator
 
 # 4. Load the data
 df = load_data()
 
-# 5. Display the entire dataset
+# 5. Display the data with potential custom styling (optional)
 if not df.empty:
-    st.header(f"Complete Dataset ({df.shape[0]} rows, {df.shape[1]} columns)")
-    st.write("Below is the full interactive dataset. You can sort columns and search using the controls.")
-
-    # Display the full DataFrame
-    st.dataframe(df, use_container_width=True)
-
-    st.markdown("---")
-    st.subheader("Summary of Data Types and Missing Values")
-    # Display information about columns and data types
-    st.text(df.info()) # Use st.text to display the output of df.info()
+    st.header("Loaded Dataset")
+    st.write(f"The dataset contains **{df.shape[0]} rows** and **{df.shape[1]} columns**.")
     
+    # You can apply conditional styling to the dataframe using pandas' Styler
+    styled_df = df.head(10).style.set_properties(**{'background-color': '#f0eaff',
+                                                    'color': '#191970',
+                                                    'border-color': '#4B0082'})
+
+    st.dataframe(styled_df, use_container_width=True)
+
+    st.subheader("Summary Statistics")
+    st.dataframe(df.describe())
 else:
     st.error("Could not load data from the specified URL.")
