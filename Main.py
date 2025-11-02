@@ -165,3 +165,14 @@ ax.set_ylabel('Count')
 
 # Display the plot in Streamlit
 st.pyplot(fig)
+
+# Visualize the distribution of the 'Age' column
+st.subheader("Distribution of Age")
+
+fig, ax = plt.subplots(figsize=(8, 6))
+sns.histplot(data=df, x='Age', bins=20, kde=False, ax=ax)  # use df (your dataset variable)
+ax.set_xlabel('Age')
+ax.set_ylabel('Frequency')
+ax.set_title('Distribution of Age')
+
+st.pyplot(fig)
