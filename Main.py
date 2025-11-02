@@ -94,6 +94,9 @@ if not df.empty:
                                                     'border-color': '#4B0082'})
 
     st.dataframe(styled_df, use_container_width=True)
+    
+    # Display the full DataFrame
+    st.dataframe(df, use_container_width=True)
 
     st.subheader("Summary Statistics")
     st.dataframe(df.describe())
