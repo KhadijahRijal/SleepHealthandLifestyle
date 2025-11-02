@@ -62,12 +62,11 @@ st.markdown("""
         border-bottom: 2px solid #8A2BE2;
         padding-bottom: 5px;
     }
-    .st-emotion-cache-nahz7x {
-        color: #BA55D3; /* Ensure text in main sections is light */
-    }
-    /* Dataframe background (using dark streamlit style) */
-    .stDataFrame {
-        color: #e0e0e0;
+    /* Ensure text in main sections is light */
+    .st-emotion-cache-nahz7x, 
+    .st-emotion-cache-163l4a8, 
+    .st-emotion-cache-12fm5so {
+        color: #e0e0e0 !important;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -92,30 +91,45 @@ df = load_data(DATA_URL)
 
 # --- Dashboard Layout ---
 
-st.title("Sleep Health and Lifestyle Dataset")
+st.title("💜 Sleep Health and Lifestyle Dataset Dashboard")
 
 if df.empty:
     st.warning("Could not load the dataset. Please check the URL and internet connection.")
 else:
+    # --- Pandas Styler Definition for Purple/Black Theme ---
+    # Define styles for table (header and alternating rows)
+    table_styles = [
+        # Header style (Dark Purple Accent)
+        {'selector': 'thead th',
+         'props': [('background-color', '#3c1b50'), ('color', '#e0e0e0'), ('font-weight', 'bold')]},
+        # Even rows (Dark Gray/Black)
+        {'selector': 'tbody tr:nth-child(even)',
+         'props': [('background-color', '#2c2c2c'), ('color', '#e0e0e0')]},
+        # Odd rows (Slightly Lighter Dark Gray)
+        {'selector': 'tbody tr:nth-child(odd)',
+         'props': [('background-color', '#3a3a3a'), ('color', '#e0e0e0')]},
+    ]
+    
     # 1. Full Dataset Display
-    st.header("1. Dataset")
+    st.header("1. Full Sleep Health Dataset")
     st.write(f"The dataset contains **{len(df)}** rows and **{len(df.columns)}** columns.")
     
-    # Use st.dataframe for a scrollable, interactive table
-    st.dataframe(df, use_container_width=True)
+    # Apply styling to the full DataFrame
+    styled_df = df.style.set_table_styles(table_styles)
+    st.dataframe(styled_df, use_container_width=True)
 
     # 2. Summary Statistics Display
-    st.header("2. Summary Statistics")
+    st.header("2. Summary Statistics (Numerical Columns)")
     st.write("Descriptive statistics for all numerical columns in the dataset.")
 
     # Calculate the summary DataFrame
     summary_df = df.describe(include=np.number).transpose()
     
-    # Optional: Format the summary for better readability (2 decimal places)
-    summary_df = summary_df.style.format("{:,.2f}")
+    # Format the summary and apply the table styles
+    styled_summary_df = summary_df.style.format("{:,.2f}").set_table_styles(table_styles)
 
     # Display the summary DataFrame
-    st.dataframe(summary_df, use_container_width=True)
+    st.dataframe(styled_summary_df, use_container_width=True)
 
     # 3. Data Dictionary / Info (Using a basic info section)
     st.header("3. Data Column Information")
@@ -130,7 +144,10 @@ else:
         })
     
     info_df = pd.DataFrame(info_data)
-    st.dataframe(info_df, use_container_width=True)
+    
+    # Apply styling to the info DataFrame
+    styled_info_df = info_df.style.set_table_styles(table_styles)
+    st.dataframe(styled_info_df, use_container_width=True)
 
 # Footer for running the app
 st.markdown("""
