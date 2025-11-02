@@ -48,11 +48,7 @@ st.markdown(
         border-radius:10px;
         border:1px solid #d1d5db;
     ">
-    <b>Scientific Visualization</b> is a multidisciplinary field that focuses on transforming complex
-    scientific data into visual forms that are easier to understand, interpret, and communicate.
-    Through the use of computational techniques, visualization helps researchers explore datasets,
-    identify hidden patterns, and gain insights that would otherwise remain obscure in numerical form.
-    </div>
+   The Visualization is counting population of Gender,Age and Occupation
     """,
     unsafe_allow_html=True
 )
