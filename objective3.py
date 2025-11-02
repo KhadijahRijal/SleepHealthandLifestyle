@@ -176,6 +176,25 @@ st.markdown("""
 
 st.write("Available columns:", list(df.columns))
 
+# Clean column names (strip spaces, make lowercase)
+df.columns = df.columns.str.strip().str.lower()
+
+# Then use lowercase names
+expected_cols = ['quality of sleep', 'systolic', 'diastolic']
+available_cols = [col for col in expected_cols if col in df.columns]
+
+if len(available_cols) < 3:
+    st.error(f"Missing columns! Found only: {available_cols}")
+else:
+    correlation_data = df[available_cols]
+    correlation_matrix = correlation_data.corr()
+
+    fig, ax = plt.subplots(figsize=(8, 6))
+    sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt=".2f", ax=ax)
+    ax.set_title("Correlation Matrix of Quality of Sleep and Blood Pressure")
+    st.pyplot(fig)
+
+
 
 # Streamlit section title
 st.subheader("Correlation Matrix of Quality of Sleep and Blood Pressure")
