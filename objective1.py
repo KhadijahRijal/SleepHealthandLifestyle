@@ -111,7 +111,7 @@ if df.empty:
 else:
     
     # --- DYNAMIC METRICS SECTION ---
-    total_respondents = mean(df)
+    total_respondents = len(df)
     avg_age = df["Age"].mean()
     male_percent = (df["Gender"].value_counts(normalize=True).get("Male", 0) * 100)
     female_percent = (df["Gender"].value_counts(normalize=True).get("Female", 0) * 100)
