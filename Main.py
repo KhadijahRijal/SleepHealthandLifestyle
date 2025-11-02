@@ -81,8 +81,6 @@ st.markdown(
 st.markdown("---") # Separator
 
 # 4. Load the data
-df = load_data()
-
 # Display the full DataFrame
 st.dataframe(df, use_container_width=True)
 
