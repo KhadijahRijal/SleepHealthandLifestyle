@@ -9,6 +9,23 @@ st.set_page_config(
     page_title="Objective 1"
 )
 
+st.markdown(
+    """
+    <div style="
+        background-color:#f0f2f6;
+        padding:15px 20px;
+        border-radius:10px;
+        border:1px solid #d1d5db;
+    ">
+    <b>Scientific Visualization</b> is a multidisciplinary field that focuses on transforming complex
+    scientific data into visual forms that are easier to understand, interpret, and communicate.
+    Through the use of computational techniques, visualization helps researchers explore datasets,
+    identify hidden patterns, and gain insights that would otherwise remain obscure in numerical form.
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
 # Using HTML for styling with a smooth color box
 st.markdown(
     """
