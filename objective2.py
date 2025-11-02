@@ -48,10 +48,7 @@ st.markdown(
         border-radius:10px;
         border:1px solid #d1d5db;
     ">
-    <b>Scientific Visualization</b> is a multidisciplinary field that focuses on transforming complex
-    scientific data into visual forms that are easier to understand, interpret, and communicate.
-    Through the use of computational techniques, visualization helps researchers explore datasets,
-    identify hidden patterns, and gain insights that would otherwise remain obscure in numerical form.
+    The graph illustrates comparison between Gender, Age, Occupation with theirs Quality of Sleep.
     </div>
     """,
     unsafe_allow_html=True
@@ -191,7 +188,7 @@ st.pyplot(fig)
 st.markdown(
     """
     <div style='text-align: center;'>
-        Figure 2
+        Figure 1
     </div>
     """,
     unsafe_allow_html=True
@@ -205,10 +202,8 @@ st.markdown(
         border-radius:10px;
         border:1px solid #d1d5db;
     ">
-    is a multidisciplinary field that focuses on transforming complex
-    scientific data into visual forms that are easier to understand, interpret, and communicate.
-    Through the use of computational techniques, visualization helps researchers explore datasets,
-    identify hidden patterns, and gain insights that would otherwise remain obscure in numerical form.
+   The average sleep quality for male and female is compared in this bar graph.
+   The average sleep quality score is displayed on the y-axis, while gender is represented on the x-axis.
     </div>
     """,
     unsafe_allow_html=True
@@ -258,10 +253,9 @@ st.markdown(
         border-radius:10px;
         border:1px solid #d1d5db;
     ">
-    is a multidisciplinary field that focuses on transforming complex
-    scientific data into visual forms that are easier to understand, interpret, and communicate.
-    Through the use of computational techniques, visualization helps researchers explore datasets,
-    identify hidden patterns, and gain insights that would otherwise remain obscure in numerical form.
+    The distribution of sleep quality between different ages is displayed in this bar graph.
+    People are divided into four age categories on the x-axis which is, 20–29, 30–39, 40–49, and 50–59. 
+    The number of people in each category is shown on the y-axis.
     </div>
     """,
     unsafe_allow_html=True
@@ -296,7 +290,7 @@ st.pyplot(fig)
 st.markdown(
     """
     <div style='text-align: center;'>
-        Figure 2
+        Figure 3
     </div>
     """,
     unsafe_allow_html=True
@@ -310,10 +304,8 @@ st.markdown(
         border-radius:10px;
         border:1px solid #d1d5db;
     ">
-    is a multidisciplinary field that focuses on transforming complex
-    scientific data into visual forms that are easier to understand, interpret, and communicate.
-    Through the use of computational techniques, visualization helps researchers explore datasets,
-    identify hidden patterns, and gain insights that would otherwise remain obscure in numerical form.
+    The average sleep quality for different occupations is displayed in this line graph.
+    The y-axis, which ranges from 4.0 to 8.0, represents average sleep quality, while the x-axis displays different occupations.
     </div>
     """,
     unsafe_allow_html=True
