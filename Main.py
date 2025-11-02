@@ -4,7 +4,7 @@ st.set_page_config(
     page_title="Sleep Health and Life"
 )
 
-objective1 = st.Page('objective1.py', title='Demographic', icon=":material/objective:")
+objective1 = st.Page('objective1.py', title='Demographic', icon=":material/school:")
 
 objective2 = st.Page('objective2.py', title='Comparison', icon=":material/home:")
 
