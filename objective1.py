@@ -5,6 +5,10 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 
+# Force light theme (no gridlines)
+plt.style.use('default')
+sns.set_theme(style="white")  # white background, no gridlines
+
 st.set_page_config(
     page_title="Objective 2"
 )
@@ -291,11 +295,20 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-st.write(
-  """
-  **Scientific Visualization** is a multidisciplinary field that focuses on transforming complex
-scientific data into visual forms that are easier to understand, interpret, and communicate.
-  Through the use of computational techniques, visualization helps researchers explore datasets,
-identify hidden patterns, and gain insights that would otherwise remain obscure in numerical form.
-  """
+st.markdown(
+    """
+    <div style="
+        background-color:#BDB5D5;
+        color: #000000; /* Black text color for contrast */;
+        padding:15px 20px;
+        border-radius:10px;
+        border:1px solid #d1d5db;
+    ">
+    is a multidisciplinary field that focuses on transforming complex
+    scientific data into visual forms that are easier to understand, interpret, and communicate.
+    Through the use of computational techniques, visualization helps researchers explore datasets,
+    identify hidden patterns, and gain insights that would otherwise remain obscure in numerical form.
+    </div>
+    """,
+    unsafe_allow_html=True
 )
