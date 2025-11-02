@@ -85,10 +85,6 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-# --- Dynamic Metrics Row (Real values from dataset) ---
-st.markdown("### Key Indicators")
-
-
 # --- Data Loading and Caching ---
 DATA_URL = "https://raw.githubusercontent.com/KhadijahRijal/SleepHealthandLifestyle/refs/heads/main/cleaned_sleep_health_data.csv"
 
@@ -114,7 +110,7 @@ if df.empty:
     st.warning("Could not load the dataset. Please check the URL and internet connection.")
 else:
     
-    # --- DYNAMIC METRICS SECTION (UPDATED) ---
+    # --- DYNAMIC METRICS SECTION ---
     total_respondents = len(df)
     avg_age = df["Age"].mean()
     male_percent = (df["Gender"].value_counts(normalize=True).get("Male", 0) * 100)
