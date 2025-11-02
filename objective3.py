@@ -172,3 +172,151 @@ st.markdown("""
 *To run this application, save the code as `sleep_data_dashboard.py` and execute:*
 `streamlit run sleep_data_dashboard.py`
 """, unsafe_allow_html=True)
+
+
+import matplotlib
+matplotlib.use("Agg")  # Ensures compatibility with Streamlit
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+import streamlit as st
+
+# Streamlit section title
+st.subheader("Correlation Matrix of Quality of Sleep and Blood Pressure")
+
+# Select the relevant numerical columns
+correlation_data = df[['Quality of Sleep', 'Systolic', 'Diastolic']]  # Replace DataFrame with df
+
+# Calculate the correlation matrix
+correlation_matrix = correlation_data.corr()
+
+# Create the heatmap
+fig, ax = plt.subplots(figsize=(8, 6))
+sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt=".2f", ax=ax)
+ax.set_title("Correlation Matrix of Quality of Sleep and Blood Pressure")
+
+# Display the heatmap in Streamlit
+st.pyplot(fig)
+
+# Add the main introduction paragraph
+st.markdown(
+    """
+    <div style='text-align: center;'>
+        Figure 2
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+st.markdown(
+    """
+    <div style="
+        background-color:#BDB5D5;
+        color: #000000; /* Black text color for contrast */;
+        padding:15px 20px;
+        border-radius:10px;
+        border:1px solid #d1d5db;
+    ">
+    is a multidisciplinary field that focuses on transforming complex
+    scientific data into visual forms that are easier to understand, interpret, and communicate.
+    Through the use of computational techniques, visualization helps researchers explore datasets,
+    identify hidden patterns, and gain insights that would otherwise remain obscure in numerical form.
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+
+import matplotlib
+matplotlib.use("Agg")  # Ensures compatibility with Streamlit
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+import streamlit as st
+
+# Streamlit section title
+st.subheader("Sleep Duration Distribution by Sleep Disorder")
+
+# Create a violin plot
+fig, ax = plt.subplots(figsize=(8, 6))
+sns.violinplot(x='Sleep Disorder', y='Sleep Duration', data=df, ax=ax)  # Replace DataFrame with df
+ax.set_title('Sleep Duration Distribution by Sleep Disorder')
+ax.set_xlabel('Sleep Disorder')
+ax.set_ylabel('Sleep Duration')
+
+# Display the plot in Streamlit
+st.pyplot(fig)
+
+# Add the main introduction paragraph
+st.markdown(
+    """
+    <div style='text-align: center;'>
+        Figure 2
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+st.markdown(
+    """
+    <div style="
+        background-color:#BDB5D5;
+        color: #000000; /* Black text color for contrast */;
+        padding:15px 20px;
+        border-radius:10px;
+        border:1px solid #d1d5db;
+    ">
+    is a multidisciplinary field that focuses on transforming complex
+    scientific data into visual forms that are easier to understand, interpret, and communicate.
+    Through the use of computational techniques, visualization helps researchers explore datasets,
+    identify hidden patterns, and gain insights that would otherwise remain obscure in numerical form.
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+
+import matplotlib
+matplotlib.use("Agg")  # Ensures compatibility with Streamlit
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+import streamlit as st
+
+# Streamlit section title
+st.subheader("Physical Activity Level Distribution by BMI Category")
+
+# Create a box plot
+fig, ax = plt.subplots(figsize=(10, 6))
+sns.boxplot(x='BMI Category', y='Physical Activity Level', data=df, ax=ax)  # Replace DataFrame with df
+ax.set_title('Physical Activity Level Distribution by BMI Category')
+ax.set_xlabel('BMI Category')
+ax.set_ylabel('Physical Activity Level')
+
+# Display the plot in Streamlit
+st.pyplot(fig)
+
+# Add the main introduction paragraph
+st.markdown(
+    """
+    <div style='text-align: center;'>
+        Figure 2
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+st.markdown(
+    """
+    <div style="
+        background-color:#BDB5D5;
+        color: #000000; /* Black text color for contrast */;
+        padding:15px 20px;
+        border-radius:10px;
+        border:1px solid #d1d5db;
+    ">
+    is a multidisciplinary field that focuses on transforming complex
+    scientific data into visual forms that are easier to understand, interpret, and communicate.
+    Through the use of computational techniques, visualization helps researchers explore datasets,
+    identify hidden patterns, and gain insights that would otherwise remain obscure in numerical form.
+    </div>
+    """,
+    unsafe_allow_html=True
+)
