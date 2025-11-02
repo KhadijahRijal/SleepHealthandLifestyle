@@ -175,6 +175,8 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.write("Available columns:", list(df.columns))
+correlation_data = df[['Quality of Sleep', 'Blood Pressure (Systolic)', 'Blood Pressure (Diastolic)']]
+
 
 # Streamlit section title
 st.subheader("Correlation Matrix of Quality of Sleep and Blood Pressure")
