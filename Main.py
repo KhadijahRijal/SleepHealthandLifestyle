@@ -9,16 +9,21 @@ st.markdown(
     """
     <style>
     .title {
-        background: linear-gradient(90deg, #ff69b4, #8a2be2, #00bfff); /* Gradient from pink to purple to blue */
-        color: #ffffff; /* White text color */
-        padding: 10px; /* Padding around the text */
-        border-radius: 5px; /* Rounded corners */
-        border: 2px solid transparent; /* No border, or set to transparent */
-        text-align: center; /* Centered text */
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+        /*
+          Original: background: linear-gradient(90deg, #ff69b4, #8a2be2, #00bfff);
+          Lighter:  Using lighter shades, e.g.,
+          #ff8fab (Light Pink) -> #a992f0 (Light Purple/Lavender) -> #66d9ff (Light Blue/Cyan)
+        */
+        background: linear-gradient(90deg, #ff8fab, #a992f0, #66d9ff); /* Lighter Gradient */
+        color: #000000; /* Changed to black text for better contrast on a lighter background */
+        padding: 10px;
+        border-radius: 5px;
+        border: 2px solid transparent;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Slightly softer shadow */
     }
     h1 {
-        margin: 0; /* Remove default margin */
+        margin: 0;
     }
     </style>
     <div class="title">
