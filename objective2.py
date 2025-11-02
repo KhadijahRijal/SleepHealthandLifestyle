@@ -48,7 +48,7 @@ st.markdown(
         border-radius:10px;
         border:1px solid #d1d5db;
     ">
-    The graph illustrates comparison between Gender, Age, Occupation with theirs Quality of Sleep.
+    <b>The graph illustrates comparison between Gender, Age, Occupation with theirs Quality of Sleep.</b>
     </div>
     """,
     unsafe_allow_html=True
