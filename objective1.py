@@ -48,7 +48,7 @@ st.markdown(
         border-radius:10px;
         border:1px solid #d1d5db;
     ">
-   The Visualization is counting population of Gender, Age and Occupation
+   <b>The Visualization is counting population of Gender, Age and Occupation</b>
     """,
     unsafe_allow_html=True
 )
