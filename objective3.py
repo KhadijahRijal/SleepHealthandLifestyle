@@ -106,6 +106,8 @@ def load_data(url):
 
 df = load_data(DATA_URL)
 
+st.write("Available columns:", list(df.columns))
+
 # --- Dashboard Layout ---
 
 st.title("💜 Sleep Health and Lifestyle Dataset")
