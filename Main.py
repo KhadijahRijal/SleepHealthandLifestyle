@@ -85,7 +85,7 @@ df = load_data(DATA_URL)
 
 # --- Dashboard Layout ---
 
-st.title("💜 Sleep Health and Lifestyle Dataset Dashboard")
+st.title("💜 Sleep Health and Lifestyle Dataset")
 
 if df.empty:
     st.warning("Could not load the dataset. Please check the URL and internet connection.")
@@ -105,7 +105,7 @@ else:
     ]
     
     # 1. Full Dataset Display
-    st.header("1. Full Sleep Health Dataset")
+    st.header("Dataset")
     st.write(f"The dataset contains **{len(df)}** rows and **{len(df.columns)}** columns.")
     
     # Apply styling to the full DataFrame
@@ -113,7 +113,7 @@ else:
     st.dataframe(styled_df, use_container_width=True)
 
     # 2. Summary Statistics Display
-    st.header("2. Summary Statistics (Numerical Columns)")
+    st.header("Summary Statistics")
     st.write("Descriptive statistics for all numerical columns in the dataset.")
 
     # Calculate the summary DataFrame
@@ -126,7 +126,7 @@ else:
     st.dataframe(styled_summary_df, use_container_width=True)
 
     # 3. Data Dictionary / Info (Using a basic info section)
-    st.header("3. Data Column Information")
+    st.header("Data Column Information")
     st.write("Below is a quick look at the column names and their data types.")
     
     info_data = []
