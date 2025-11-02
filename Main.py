@@ -149,12 +149,3 @@ st.markdown("""
 *To run this application, save the code as `sleep_data_dashboard.py` and execute:*
 `streamlit run sleep_data_dashboard.py`
 """, unsafe_allow_html=True)
-
-styled_X_train = X_train.head().style.set_table_styles(table_styles)
-styled_y_train = y_train.head().to_frame().style.set_table_styles(table_styles)
-
-st.subheader("Training Features (X_train)")
-st.dataframe(styled_X_train, use_container_width=True)
-
-st.subheader("Training Target Variables (y_train)")
-st.dataframe(styled_y_train, use_container_width=True)
