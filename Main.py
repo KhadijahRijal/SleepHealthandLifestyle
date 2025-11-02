@@ -184,10 +184,13 @@ ax.set_ylabel('Count')
 st.pyplot(fig)
 
 # Add the main introduction paragraph
-st.write(
-  """
-  Figure 1
-  """
+st.markdown(
+    """
+    <div style='text-align: center;'>
+        Figure 1
+    </div>
+    """,
+    unsafe_allow_html=True
 )
 
 st.markdown(
