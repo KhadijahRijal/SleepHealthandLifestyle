@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 
 st.set_page_config(
@@ -149,3 +151,17 @@ st.markdown("""
 *To run this application, save the code as `sleep_data_dashboard.py` and execute:*
 `streamlit run sleep_data_dashboard.py`
 """, unsafe_allow_html=True)
+
+
+# Visualize age distribution by gender
+st.subheader("Age Distribution by Gender")
+
+fig, ax = plt.subplots(figsize=(10, 6))
+sns.histplot(data=df, x='Age', hue='Gender', multiple='stack', bins=20, kde=True, ax=ax)
+
+ax.set_title('Age Distribution by Gender')
+ax.set_xlabel('Age')
+ax.set_ylabel('Count')
+
+# Display the plot in Streamlit
+st.pyplot(fig)
