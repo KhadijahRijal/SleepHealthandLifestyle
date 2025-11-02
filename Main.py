@@ -247,24 +247,35 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-import matplotlib
-matplotlib.use("Agg")  # Ensures compatibility with Streamlit Cloud
+# Get the value counts for the 'Occupation' column
+occupation_counts = df['Occupation'].value_counts()  # replace DataFrame with df
 
-import matplotlib.pyplot as plt
-import seaborn as sns
-import streamlit as st
+# Create a pie chart
+st.subheader("Distribution of Occupation")
 
-# Visualize the distribution of the 'Age' column
-st.subheader("Distribution of Age")
+fig, ax = plt.subplots(figsize=(10, 8))
+wedges, texts, autotexts = ax.pie(
+    occupation_counts,
+    autopct='%1.1f%%',
+    startangle=140,
+    pctdistance=1.1
+)
 
-fig, ax = plt.subplots(figsize=(8, 6))
-sns.histplot(data=df, x='Age', bins=20, kde=False, ax=ax)  # replace DataFrame with df
-ax.set_xlabel('Age')
-ax.set_ylabel('Frequency')
-ax.set_title('Distribution of Age')
+# Add legend
+ax.legend(
+    wedges,
+    occupation_counts.index,
+    title="Occupation",
+    loc="center left",
+    bbox_to_anchor=(1, 0, 0.5, 1)
+)
+
+ax.set_title('Distribution of Occupation')
+ax.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle
 
 # Display the plot in Streamlit
 st.pyplot(fig)
+
 
 st.markdown(
     """
