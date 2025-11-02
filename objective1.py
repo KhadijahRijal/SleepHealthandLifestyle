@@ -171,9 +171,6 @@ st.markdown("""
 
 
 # Visualize age distribution by gender
-sns.set_style("darkgrid")
-sns.set_palette("Purples_r")
-
 st.subheader("Distribution of Age")
 
 fig, ax = plt.subplots(figsize=(8, 6))
