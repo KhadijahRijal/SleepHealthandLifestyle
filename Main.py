@@ -9,18 +9,15 @@ st.markdown(
     """
     <style>
     .title {
-        /*
-          Darker Gradient:
-          Using deep jewel tones: Dark Ruby (#8b0000) -> Deep Indigo (#4b0082) -> Navy Blue (#000080)
-          This creates a richer, more saturated, and darker look.
-        */
-        background: linear-gradient(90deg, #8b0000, #4b0082, #000080); /* Dark Gradient */
-        color: #ffffff; /* White text color for high contrast */
+        /* Gradient from bright pink to deep purple */
+        background: linear-gradient(90deg, #ff1493, #6a059c);
+        color: #ffffff; /* White text color for contrast */
         padding: 10px;
         border-radius: 5px;
-        border: 2px solid transparent;
+        /* Custom Border: 3px wide, solid style, black color */
+        border: 3px solid #000000;
         text-align: center;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7); /* Stronger shadow for depth */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
     }
     h1 {
         margin: 0;
@@ -29,6 +26,9 @@ st.markdown(
     <div class="title">
         <h1>Objective 1</h1>
     </div>
+    """,
+    unsafe_allow_html=True
+)
     """,
     unsafe_allow_html=True
 )
