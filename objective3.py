@@ -48,10 +48,7 @@ st.markdown(
         border-radius:10px;
         border:1px solid #d1d5db;
     ">
-    <b>Scientific Visualization</b> is a multidisciplinary field that focuses on transforming complex
-    scientific data into visual forms that are easier to understand, interpret, and communicate.
-    Through the use of computational techniques, visualization helps researchers explore datasets,
-    identify hidden patterns, and gain insights that would otherwise remain obscure in numerical form.
+    <b>The graph display Correlation of "Quality of Sleep and Heart Rate", "Sleep Duration with Sleep Disoder and Physical Activity and BMI Category."</b>
     </div>
     """,
     unsafe_allow_html=True
@@ -196,7 +193,7 @@ st.pyplot(fig)
 st.markdown(
     """
     <div style='text-align: center;'>
-        Figure 2
+        Figure 1
     </div>
     """,
     unsafe_allow_html=True
@@ -210,10 +207,8 @@ st.markdown(
         border-radius:10px;
         border:1px solid #d1d5db;
     ">
-    is a multidisciplinary field that focuses on transforming complex
-    scientific data into visual forms that are easier to understand, interpret, and communicate.
-    Through the use of computational techniques, visualization helps researchers explore datasets,
-    identify hidden patterns, and gain insights that would otherwise remain obscure in numerical form.
+    The correlation matrix between two variables, heart rate and sleep quality, is displayed in this heatmap.
+    The correlation value is shown in each cell, and the strength and direction of the link are indicated by the colour tone.
     </div>
     """,
     unsafe_allow_html=True
@@ -251,10 +246,8 @@ st.markdown(
         border-radius:10px;
         border:1px solid #d1d5db;
     ">
-    is a multidisciplinary field that focuses on transforming complex
-    scientific data into visual forms that are easier to understand, interpret, and communicate.
-    Through the use of computational techniques, visualization helps researchers explore datasets,
-    identify hidden patterns, and gain insights that would otherwise remain obscure in numerical form.
+    The distribution of sleep duration for people with insomnia and sleep apnea is compared in this violin plot.
+    The y-axis shows the quantity of sleep in hours, while the x-axis displays the type of sleep disorder.
     </div>
     """,
     unsafe_allow_html=True
@@ -278,7 +271,7 @@ st.pyplot(fig)
 st.markdown(
     """
     <div style='text-align: center;'>
-        Figure 2
+        Figure 3
     </div>
     """,
     unsafe_allow_html=True
@@ -292,11 +285,10 @@ st.markdown(
         border-radius:10px;
         border:1px solid #d1d5db;
     ">
-    is a multidisciplinary field that focuses on transforming complex
-    scientific data into visual forms that are easier to understand, interpret, and communicate.
-    Through the use of computational techniques, visualization helps researchers explore datasets,
-    identify hidden patterns, and gain insights that would otherwise remain obscure in numerical form.
-    </div>
+     The distribution of physical activity levels in different BMI categories is displayed in this box plot.
+     The BMI categories which is, Obese, Normal Weight, Normal, and Overweight.
+     While, on the x-axis the amount of physical activity is measured on the y-axis.
+     </div>
     """,
     unsafe_allow_html=True
 )
