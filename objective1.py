@@ -171,16 +171,20 @@ st.markdown("""
 
 
 # Visualize age distribution by gender
-st.subheader("Age Distribution by Gender")
+sns.set_style("darkgrid")
+sns.set_palette("Purples_r")
 
-fig, ax = plt.subplots(figsize=(10, 6))
-sns.histplot(data=df, x='Age', hue='Gender', multiple='stack', bins=20, kde=True, ax=ax)
+st.subheader("Distribution of Age")
 
-ax.set_title('Age Distribution by Gender')
-ax.set_xlabel('Age')
-ax.set_ylabel('Count')
+fig, ax = plt.subplots(figsize=(8, 6))
+sns.histplot(data=df, x='Age', bins=20, kde=False, ax=ax)
+ax.set_facecolor("#1a1a1a")
+fig.patch.set_facecolor("#1a1a1a")
+ax.set_title('Distribution of Age', color='white')
+ax.set_xlabel('Age', color='white')
+ax.set_ylabel('Frequency', color='white')
+ax.tick_params(colors='white')
 
-# Display the plot in Streamlit
 st.pyplot(fig)
 
 # Add the main introduction paragraph
