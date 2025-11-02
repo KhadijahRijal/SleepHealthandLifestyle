@@ -6,7 +6,7 @@ import seaborn as sns
 
 
 st.set_page_config(
-    page_title="Objective 3"
+    page_title="Objective 2"
 )
 
 # Using HTML for styling with a smooth color box
@@ -29,7 +29,7 @@ st.markdown(
     }
     </style>
     <div class="title">
-        <h1>Objective 1</h1>
+        <h1>Objective 2</h1>
     </div>
     """,
     unsafe_allow_html=True
