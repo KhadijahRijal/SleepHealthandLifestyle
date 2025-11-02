@@ -59,7 +59,7 @@ st.markdown(
     /* Custom Title Box Styling: Purple background, thick black border */
     .purple-title-box {
         background: #4B0082; /* Deep Indigo/Purple */
-        color: #FFFFFF; /* White text for contrast */
+        color: #000000; /* Black text for contrast */
         padding: 15px;
         border-radius: 8px;
         border: 4px solid #000000; /* Thick Black Border */
