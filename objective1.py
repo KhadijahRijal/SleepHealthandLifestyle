@@ -89,21 +89,6 @@ st.markdown("""
 st.markdown("### Key Indicators")
 
 
-# --- DYNAMIC METRICS SECTION (UPDATED) ---
-# These values are now calculated directly from the dataset (df)
-
-# --- DYNAMIC METRICS SECTION (UPDATED) ---
-# These values are calculated directly from your Sleep Health and Lifestyle dataset (df)
-
-
-col1, col2, col3, col4 = st.columns(4)
-    
-col1.metric(label="PLO 2", value=f"3.3", help="PLO 2: Cognitive Skill", border=True)
-col2.metric(label="PLO 3", value=f"3.5", help="PLO 3: Digital Skill", border=True)
-col3.metric(label="PLO 4", value=f"4.0", help="PLO 4: Interpersonal Skill", border=True)
-col4.metric(label="PLO 5", value=f"4.3", help="PLO 5: Communication Skill", border=True)
-
-
 # --- Data Loading and Caching ---
 DATA_URL = "https://raw.githubusercontent.com/KhadijahRijal/SleepHealthandLifestyle/refs/heads/main/cleaned_sleep_health_data.csv"
 
@@ -128,6 +113,20 @@ st.title("💜 Sleep Health and Lifestyle Dataset")
 if df.empty:
     st.warning("Could not load the dataset. Please check the URL and internet connection.")
 else:
+    # --- DYNAMIC METRICS SECTION (UPDATED) ---
+    total_respondents = len(df)
+    avg_age = df["Age"].mean()
+    male_percent = (df["Gender"].value_counts(normalize=True).get("Male", 0) * 100)
+    female_percent = (df["Gender"].value_counts(normalize=True).get("Female", 0) * 100)
+    most_common_occupation = df["Occupation"].mode()[0]
+    unique_occupations = df["Occupation"].nunique()
+
+    col1, col2, col3, col4 = st.columns(4)
+    col1.metric(label="Total Respondents", value=total_respondents)
+    col2.metric(label="Average Age", value=f"{avg_age:.1f}")
+    col3.metric(label="Gender (Male/Female)", value=f"{male_percent:.1f}% / {female_percent:.1f}%")
+    col4.metric(label="Top Occupation", value=f"{most_common_occupation} ({unique_occupations} types)")
+    
     # --- Pandas Styler Definition for Purple/Black Theme ---
     # Define styles for table (header and alternating rows)
     table_styles = [
