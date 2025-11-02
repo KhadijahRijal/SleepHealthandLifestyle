@@ -242,7 +242,7 @@ st.markdown(
         border:1px solid #d1d5db;
     ">
    The total distribution of age in the dataset is displayed in this graph. 
-   Age (from 30 to 60) is represented by the x-axis, while the frequency of people in each age group is displayed on the y-axis.
+   Age from 30 to 60 is represented by the x-axis, while the frequency of people in each age group is displayed on the y-axis.
     </div>
     """,
     unsafe_allow_html=True
