@@ -149,3 +149,15 @@ st.markdown("""
 *To run this application, save the code as `sleep_data_dashboard.py` and execute:*
 `streamlit run sleep_data_dashboard.py`
 """, unsafe_allow_html=True)
+
+
+# Assuming X_train and y_train are already defined DataFrames/Series
+# (You will need to load or define X_train and y_train in your Streamlit app)
+
+# Display the first few rows of the training features DataFrame
+st.subheader("Training Features ($X_{train}$)") # Use st.subheader for a title
+st.dataframe(X_train.head()) # Use st.dataframe for an interactive table, or st.table()
+
+# Display the first few rows of the training target DataFrame
+st.subheader("Training Target Variables ($y_{train}$)") # Use st.subheader for a title
+st.dataframe(y_train.head()) # Use st.dataframe
