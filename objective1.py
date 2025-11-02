@@ -89,6 +89,29 @@ st.markdown("""
 st.markdown("### Key Indicators")
 
 
+# --- DYNAMIC METRICS SECTION (UPDATED) ---
+# These values are now calculated directly from the dataset (df)
+
+# --- DYNAMIC METRICS SECTION (UPDATED) ---
+# These values are calculated directly from your Sleep Health and Lifestyle dataset (df)
+
+# 1. Calculate the values
+total_respondents = len(df)
+avg_age = df["Age"].mean()
+male_percent = (df["Gender"].value_counts(normalize=True).get("Male", 0) * 100)
+female_percent = (df["Gender"].value_counts(normalize=True).get("Female", 0) * 100)
+most_common_occupation = df["Occupation"].mode()[0]
+unique_occupations = df["Occupation"].nunique()
+
+# 2. Display the metrics
+col1, col2, col3, col4 = st.columns(4)
+col1.metric(label="Total Respondents", value=total_respondents)
+col2.metric(label="Average Age", value=f"{avg_age:.1f}")
+col3.metric(label="Gender (Male/Female)", value=f"{male_percent:.1f}% / {female_percent:.1f}%")
+col4.metric(label="Top Occupation", value=f"{most_common_occupation} ({unique_occupations} types)")
+# --- END OF UPDATE ---
+
+
 # --- Data Loading and Caching ---
 DATA_URL = "https://raw.githubusercontent.com/KhadijahRijal/SleepHealthandLifestyle/refs/heads/main/cleaned_sleep_health_data.csv"
 
