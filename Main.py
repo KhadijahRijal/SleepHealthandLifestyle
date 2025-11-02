@@ -192,7 +192,6 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-
 st.markdown(
     """
     <div style="
@@ -221,3 +220,74 @@ ax.set_ylabel('Frequency')
 ax.set_title('Distribution of Age')
 
 st.pyplot(fig)
+
+st.markdown(
+    """
+    <div style='text-align: center;'>
+        Figure 1
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+st.markdown(
+    """
+    <div style="
+        background-color:#BDB5D5;
+        color: #000000; /* Black text color for contrast */;
+        padding:15px 20px;
+        border-radius:10px;
+        border:1px solid #d1d5db;
+    ">
+    is a multidisciplinary field that focuses on transforming complex
+    scientific data into visual forms that are easier to understand, interpret, and communicate.
+    Through the use of computational techniques, visualization helps researchers explore datasets,
+    identify hidden patterns, and gain insights that would otherwise remain obscure in numerical form.
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+import matplotlib
+matplotlib.use("Agg")  # Ensures compatibility with Streamlit Cloud
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+import streamlit as st
+
+# Visualize the distribution of the 'Age' column
+st.subheader("Distribution of Age")
+
+fig, ax = plt.subplots(figsize=(8, 6))
+sns.histplot(data=df, x='Age', bins=20, kde=False, ax=ax)  # replace DataFrame with df
+ax.set_xlabel('Age')
+ax.set_ylabel('Frequency')
+ax.set_title('Distribution of Age')
+
+# Display the plot in Streamlit
+st.pyplot(fig)
+
+st.markdown(
+    """
+    <div style='text-align: center;'>
+        Figure 1
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+st.markdown(
+    """
+    <div style="
+        background-color:#BDB5D5;
+        color: #000000; /* Black text color for contrast */;
+        padding:15px 20px;
+        border-radius:10px;
+        border:1px solid #d1d5db;
+    ">
+    is a multidisciplinary field that focuses on transforming complex
+    scientific data into visual forms that are easier to understand, interpret, and communicate.
+    Through the use of computational techniques, visualization helps researchers explore datasets,
+    identify hidden patterns, and gain insights that would otherwise remain obscure in numerical form.
+    </div>
+    """,
+    unsafe_allow_html=True
+)
