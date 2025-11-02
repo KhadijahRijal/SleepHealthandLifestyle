@@ -175,15 +175,13 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.write("Available columns:", list(df.columns))
-correlation_data = df[['Quality of Sleep', 'Systolic', 'Diastolic']]
-correlation_data = df[['Quality of Sleep', 'Blood Pressure (Systolic)', 'Blood Pressure (Diastolic)']]
 
 
 # Streamlit section title
 st.subheader("Correlation Matrix of Quality of Sleep and Blood Pressure")
 
 # Select the relevant numerical columns
-correlation_data = df[['Quality of Sleep', 'Systolic', 'Diastolic']]  # Replace DataFrame with df
+correlation_data = df[['Quality of Sleep', 'Blood Pressure (Systolic)', 'Blood Pressure (Diastolic)']]  # Replace DataFrame with df
 
 # Calculate the correlation matrix
 correlation_matrix = correlation_data.corr()
