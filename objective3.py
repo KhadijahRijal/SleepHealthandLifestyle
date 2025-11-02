@@ -106,7 +106,6 @@ def load_data(url):
 
 df = load_data(DATA_URL)
 
-st.write("Available columns:", list(df.columns))
 
 # --- Dashboard Layout ---
 
@@ -175,6 +174,7 @@ st.markdown("""
 `streamlit run sleep_data_dashboard.py`
 """, unsafe_allow_html=True)
 
+st.write("Available columns:", list(df.columns))
 
 # Streamlit section title
 st.subheader("Correlation Matrix of Quality of Sleep and Blood Pressure")
