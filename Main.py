@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import numpy as np
 
 
 st.set_page_config(
@@ -33,72 +34,107 @@ st.markdown(
 )
 
 
+# --- Configuration for Dark Mode / Purple Theme ---
+# Note: Streamlit theming is best done via .streamlit/config.toml, 
+# but we can set up the page layout here and use markdown for color accents.
 st.set_page_config(
-    page_title="Objective 1 - Purple & Black Theme",
-    layout="wide" # Use wide layout for better display
+    page_title="Sleep Health & Lifestyle Data Analysis",
+    layout="wide",
+    initial_sidebar_state="expanded",
 )
 
-# 1. Define the URL for the CSV data
+# Custom CSS for the Purple/Black theme
+# This targets the main title and applies a purple accent.
+st.markdown("""
+<style>
+    /* Main Header Styling */
+    .stApp {
+        background-color: #1a1a1a; /* Dark background */
+        color: #e0e0e0; /* Light text for contrast */
+    }
+    h1 {
+        color: #8A2BE2; /* Primary Purple for main title */
+        font-weight: 700;
+        text-shadow: 2px 2px 4px #000000;
+    }
+    h2 {
+        color: #BA55D3; /* Medium Purple for headers */
+        border-bottom: 2px solid #8A2BE2;
+        padding-bottom: 5px;
+    }
+    .st-emotion-cache-nahz7x {
+        color: #BA55D3; /* Ensure text in main sections is light */
+    }
+    /* Dataframe background (using dark streamlit style) */
+    .stDataFrame {
+        color: #e0e0e0;
+    }
+</style>
+""", unsafe_allow_html=True)
+
+
+# --- Data Loading and Caching ---
 DATA_URL = "https://raw.githubusercontent.com/KhadijahRijal/SleepHealthandLifestyle/refs/heads/main/cleaned_sleep_health_data.csv"
 
-# 2. Use a cache decorator for efficient data loading
 @st.cache_data
-def load_data():
-    """Loads the CSV data from the URL using pandas."""
+def load_data(url):
+    """Loads and returns the DataFrame from the specified URL."""
     try:
-        data = pd.read_csv(DATA_URL)
+        data = pd.read_csv(url)
+        # Drop any unnamed columns that might result from CSV indexing
+        data = data.loc[:, ~data.columns.str.contains('^Unnamed')]
         return data
     except Exception as e:
         st.error(f"Error loading data: {e}")
-        return pd.DataFrame() # Return empty DataFrame on failure
+        return pd.DataFrame()
 
-# 3. Apply Purple & Black Styling to the Title Box
-st.markdown(
-    """
-    <style>
-    /* Custom Title Box Styling: Purple background, thick black border */
-    .purple-title-box {
-        background: #4B0082; /* Deep Indigo/Purple */
-        color: #FFFFFF; /* White text for contrast */
-        padding: 15px;
-        border-radius: 8px;
-        border: 4px solid #000000; /* Thick Black Border */
-        text-align: center;
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6); /* Stronger shadow */
-    }
-    h1 {
-        margin: 0;
-        font-size: 2.5em;
-    }
-    </style>
-    <div class="purple-title-box">
-        <h1>Sleep Health and Lifestyle Data 🌙</h1>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+df = load_data(DATA_URL)
 
-st.markdown("---") # Separator
+# --- Dashboard Layout ---
 
-# 4. Load the data
-# Display the full DataFrame
-st.dataframe(df, use_container_width=True)
+st.title("💜 Sleep Health and Lifestyle Dataset Dashboard")
 
-# 5. Display the data with potential custom styling (optional)
-if not df.empty:
-    st.header("Loaded Dataset")
-    st.write(f"The dataset contains **{df.shape[0]} rows** and **{df.shape[1]} columns**.")
+if df.empty:
+    st.warning("Could not load the dataset. Please check the URL and internet connection.")
+else:
+    # 1. Full Dataset Display
+    st.header("1. Full Sleep Health Dataset")
+    st.write(f"The dataset contains **{len(df)}** rows and **{len(df.columns)}** columns.")
     
-    # You can apply conditional styling to the dataframe using pandas' Styler
-    styled_df = df.head(10).style.set_properties(**{'background-color': '#f0eaff',
-                                                    'color': '#191970',
-                                                    'border-color': '#4B0082'})
-    
-    
-    # Display the full DataFrame
+    # Use st.dataframe for a scrollable, interactive table
     st.dataframe(df, use_container_width=True)
 
-    st.subheader("Summary Statistics")
-    st.dataframe(df.describe())
-else:
-    st.error("Could not load data from the specified URL.")
+    # 2. Summary Statistics Display
+    st.header("2. Summary Statistics (Numerical Columns)")
+    st.write("Descriptive statistics for all numerical columns in the dataset.")
+
+    # Calculate the summary DataFrame
+    summary_df = df.describe(include=np.number).transpose()
+    
+    # Optional: Format the summary for better readability (2 decimal places)
+    summary_df = summary_df.style.format("{:,.2f}")
+
+    # Display the summary DataFrame
+    st.dataframe(summary_df, use_container_width=True)
+
+    # 3. Data Dictionary / Info (Using a basic info section)
+    st.header("3. Data Column Information")
+    st.write("Below is a quick look at the column names and their data types.")
+    
+    info_data = []
+    for col, dtype in df.dtypes.items():
+        info_data.append({
+            'Column Name': col,
+            'Data Type': str(dtype),
+            'Non-Null Count': df[col].count()
+        })
+    
+    info_df = pd.DataFrame(info_data)
+    st.dataframe(info_df, use_container_width=True)
+
+# Footer for running the app
+st.markdown("""
+---
+*To run this application, save the code as `sleep_data_dashboard.py` and execute:*
+`streamlit run sleep_data_dashboard.py`
+""", unsafe_allow_html=True)
