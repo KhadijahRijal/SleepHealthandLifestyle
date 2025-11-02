@@ -6,7 +6,7 @@ import seaborn as sns
 
 
 st.set_page_config(
-    page_title="Objective 1"
+    page_title="Objective 3"
 )
 
 # Using HTML for styling with a smooth color box
