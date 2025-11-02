@@ -85,6 +85,27 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
+# --- Dynamic Metrics Row (Real values from dataset) ---
+st.markdown("### Key Indicators")
+
+if not df.empty:
+    plo2_value = round(df["Quality of Sleep"].mean(), 1)
+    plo3_value = round(df["Physical Activity Level"].mean(), 1)
+    plo4_value = round(df["Stress Level"].mean(), 1)
+    plo5_value = round(df["Heart Rate"].mean(), 1)
+
+    col1, col2, col3, col4 = st.columns(4)
+
+    col1.metric(label="PLO 2", value=f"{plo2_value}", help="PLO 2: Cognitive Skill — Average Quality of Sleep", border=True)
+    col2.metric(label="PLO 3", value=f"{plo3_value}", help="PLO 3: Digital Skill — Average Physical Activity Level", border=True)
+    col3.metric(label="PLO 4", value=f"{plo4_value}", help="PLO 4: Interpersonal Skill — Average Stress Level", border=True)
+    col4.metric(label="PLO 5", value=f"{plo5_value}", help="PLO 5: Communication Skill — Average Heart Rate", border=True)
+
+    st.markdown("---")
+else:
+    st.warning("Dataset not loaded. Metrics unavailable.")
+
+
 # --- Data Loading and Caching ---
 DATA_URL = "https://raw.githubusercontent.com/KhadijahRijal/SleepHealthandLifestyle/refs/heads/main/cleaned_sleep_health_data.csv"
 
