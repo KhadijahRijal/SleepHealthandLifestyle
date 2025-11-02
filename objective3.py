@@ -174,33 +174,12 @@ st.markdown("""
 `streamlit run sleep_data_dashboard.py`
 """, unsafe_allow_html=True)
 
-st.write("Available columns:", list(df.columns))
-
-# Clean column names (strip spaces, make lowercase)
-df.columns = df.columns.str.strip().str.lower()
-
-# Then use lowercase names
-expected_cols = ['quality of sleep', 'systolic', 'diastolic']
-available_cols = [col for col in expected_cols if col in df.columns]
-
-if len(available_cols) < 3:
-    st.error(f"Missing columns! Found only: {available_cols}")
-else:
-    correlation_data = df[available_cols]
-    correlation_matrix = correlation_data.corr()
-
-    fig, ax = plt.subplots(figsize=(8, 6))
-    sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt=".2f", ax=ax)
-    ax.set_title("Correlation Matrix of Quality of Sleep and Blood Pressure")
-    st.pyplot(fig)
-
-
 
 # Streamlit section title
-st.subheader("Correlation Matrix of Quality of Sleep and Blood Pressure")
+st.subheader("Correlation Matrix of Quality of Sleep and Heart Rate")
 
 # Select the relevant numerical columns
-correlation_data = df[['Quality of Sleep', 'Blood Pressure (Systolic)', 'Blood Pressure (Diastolic)']]  # Replace DataFrame with df
+correlation_data = df[['Quality of Sleep', 'Heart Rate']]  # Replace DataFrame with df
 
 # Calculate the correlation matrix
 correlation_matrix = correlation_data.corr()
@@ -208,9 +187,9 @@ correlation_matrix = correlation_data.corr()
 # Create the heatmap
 fig, ax = plt.subplots(figsize=(8, 6))
 sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt=".2f", ax=ax)
-ax.set_title("Correlation Matrix of Quality of Sleep and Blood Pressure")
+ax.set_title("Correlation Matrix of Quality of Sleep and Heart Rate")
 
-# Display the heatmap in Streamlit
+# Display the plot in Streamlit
 st.pyplot(fig)
 
 # Add the main introduction paragraph
