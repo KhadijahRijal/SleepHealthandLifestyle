@@ -10,17 +10,17 @@ st.markdown(
     <style>
     .title {
         /*
-          Original: background: linear-gradient(90deg, #ff69b4, #8a2be2, #00bfff);
-          Lighter:  Using lighter shades, e.g.,
-          #ff8fab (Light Pink) -> #a992f0 (Light Purple/Lavender) -> #66d9ff (Light Blue/Cyan)
+          Darker Gradient:
+          Using deep jewel tones: Dark Ruby (#8b0000) -> Deep Indigo (#4b0082) -> Navy Blue (#000080)
+          This creates a richer, more saturated, and darker look.
         */
-        background: linear-gradient(90deg, #ff8fab, #a992f0, #66d9ff); /* Lighter Gradient */
-        color: #000000; /* Changed to black text for better contrast on a lighter background */
+        background: linear-gradient(90deg, #8b0000, #4b0082, #000080); /* Dark Gradient */
+        color: #ffffff; /* White text color for high contrast */
         padding: 10px;
         border-radius: 5px;
         border: 2px solid transparent;
         text-align: center;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Slightly softer shadow */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7); /* Stronger shadow for depth */
     }
     h1 {
         margin: 0;
