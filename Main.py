@@ -9,13 +9,13 @@ st.markdown(
     """
     <style>
     .title {
-        /* Smooth, single background color (Medium Slate Blue) */
+        /* Smooth, single background color (Lavender) */
         background: #E6E6FA; 
         color: #000000; /* Black text color for contrast */
         padding: 10px;
         border-radius: 5px;
-        /* Thick Black Border: 14px wide, solid style, black color */
-        border: 14px solid #000000;
+        /* Thick Black Border: 10px wide, solid style, black color */
+        border: 10px solid #000000;
         text-align: center;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
     }
